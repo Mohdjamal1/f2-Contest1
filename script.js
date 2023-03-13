@@ -31,11 +31,13 @@ function calculate(num1, num2, operator) {
     var result = document.getElementById("result");
     var operator = document.getElementById("operator").value;
     // Check if the input values are valid.
-    if (isNaN(num1) || isNaN(num2)) {
+    if ((num1 =="") || (num2 =="")) {
       result.textContent = "Please enter valid numbers!";
+      return;
     }
     if (operator === "") {
       result.textContent = "Please select an operator!";
+      return;
     }
     const res = calculate(parseFloat(num1), parseFloat(num2), operator);
     result.textContent = "Result is : " + res;
